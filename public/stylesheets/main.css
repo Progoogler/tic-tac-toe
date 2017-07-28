@@ -1,0 +1,44 @@
+body {
+  text-align: center;
+}
+
+#board {
+  /*margin: 10em 0;*/
+}
+
+.row {
+  display: inline-block;
+  margin: 0;
+}
+
+.slot {
+  display: -webkit-flex; /* Safari */
+  -webkit-align-items: center; /* Safari 7.0+ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10em;
+  height: 10em;
+  border: 1px solid red;
+  margin: .3em;
+  margin-bottom: .8em;
+}
+
+.slot:hover {
+  background-color: blue;
+  cursor: pointer;
+}
+
+.x {
+  visibility: hidden;
+  font-size: 4em;
+}
+
+.o {
+  visibility: hidden;
+  font-size: 4em;
+}
+
+#reset:hover {
+  cursor: pointer;
+}

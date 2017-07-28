@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+  <div id="title">Tic Tac Toe</div>
+
+  <div id="winner"></div>
+
+  <div id="board">
+    <div class="topRow row">
+      <div id="topLeft" class="slot" v-on:click="tic('topLeft')">
+        <div class="x">x</div><div class="o">o</div>
+      </div>
+      <div id="topCenter" class="slot" v-on:click="tic('topCenter')">
+        <div class="x">x</div><div class="o">o</div>
+      </div>
+      <div id="topRight" class="slot" v-on:click="tic('topRight')">
+        <div class="x">x</div><div class="o">o</div>
+      </div>
+    </div>
+    <div class="midRow row">
+      <div id="midLeft" class="slot" v-on:click="tic('midLeft')">
+        <div class="x">x</div><div class="o">o</div>
+      </div>
+      <div id="midCenter" class="slot" v-on:click="tic('midCenter')">
+        <div class="x">x</div><div class="o">o</div>
+      </div>
+      <div id="midRight" class="slot" v-on:click="tic('midRight')">
+        <div class="x">x</div><div class="o">o</div>
+      </div>
+    </div>
+      <div class="botRow row">
+      <div id="botLeft" class="slot" v-on:click="tic('botLeft')">
+        <div class="x">x</div><div class="o">o</div>
+      </div>
+      <div id="botCenter" class="slot" v-on:click="tic('botCenter')">
+        <div class="x">x</div><div class="o">o</div>
+      </div>
+      <div id="botRight" class="slot" v-on:click="tic('botRight')">
+        <div class="x">x</div><div class="o">o</div>
+      </div>
+    </div>
+
+    <div id="reset" v-on:click="reset()">New game</div>
+  </div>
+
+
+
+
+  <% include ../partials/scripts.ejs %>
+</body>
+</html>
