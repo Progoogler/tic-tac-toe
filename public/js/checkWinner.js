@@ -7,51 +7,51 @@ function checkWinner(lastMove, board, winner) {
       board.diagonalDown === 3 || board.diagonalUp === 3) {
 
     if (board.topHorizontal === 3) {
-      $('#topLeft').css('background-color', 'orange');
-      $('#topCenter').css('background-color', 'orange');
-      $('#topRight').css('background-color', 'orange');
+      $('#topLeft').css('background-color', '#ff8000');
+      $('#topCenter').css('background-color', '#ff8000');
+      $('#topRight').css('background-color', '#ff8000');
       winner.show('player')
     }
     if (board.midHorizontal === 3) {
-      $('#midLeft').css('background-color', 'orange');
-      $('#midCenter').css('background-color', 'orange');
-      $('#midRight').css('background-color', 'orange');
+      $('#midLeft').css('background-color', '#ff8000');
+      $('#midCenter').css('background-color', '#ff8000');
+      $('#midRight').css('background-color', '#ff8000');
       winner.show('player')
     }
     if (board.botHorizontal === 3) {
-      $('#botLeft').css('background-color', 'orange');
-      $('#botCenter').css('background-color', 'orange');
-      $('#botRight').css('background-color', 'orange');
+      $('#botLeft').css('background-color', '#ff8000');
+      $('#botCenter').css('background-color', '#ff8000');
+      $('#botRight').css('background-color', '#ff8000');
       winner.show('player')
     }
     if (board.verticalZero === 3) {
-      $('#topLeft').css('background-color', 'orange');
-      $('#midLeft').css('background-color', 'orange');
-      $('#botLeft').css('background-color', 'orange');
+      $('#topLeft').css('background-color', '#ff8000');
+      $('#midLeft').css('background-color', '#ff8000');
+      $('#botLeft').css('background-color', '#ff8000');
       winner.show('player')
     }
     if (board.verticalOne === 3) {
-      $('#topCenter').css('background-color', 'orange');
-      $('#midCenter').css('background-color', 'orange');
-      $('#botCenter').css('background-color', 'orange');
+      $('#topCenter').css('background-color', '#ff8000');
+      $('#midCenter').css('background-color', '#ff8000');
+      $('#botCenter').css('background-color', '#ff8000');
       winner.show('player')
     }
     if (board.verticalTwo === 3) {
-      $('#topRight').css('background-color', 'orange');
-      $('#midRight').css('background-color', 'orange');
-      $('#botRight').css('background-color', 'orange');
+      $('#topRight').css('background-color', '#ff8000');
+      $('#midRight').css('background-color', '#ff8000');
+      $('#botRight').css('background-color', '#ff8000');
       winner.show('player')
     }
     if (board.diagonalDown === 3) {
-      $('#topLeft').css('background-color', 'orange');
-      $('#midCenter').css('background-color', 'orange');
-      $('#botRight').css('background-color', 'orange');
+      $('#topLeft').css('background-color', '#ff8000');
+      $('#midCenter').css('background-color', '#ff8000');
+      $('#botRight').css('background-color', '#ff8000');
       winner.show('player')
     }
     if (board.diagonalUp === 3) {
-      $('#topRight').css('background-color', 'orange');
-      $('#midCenter').css('background-color', 'orange');
-      $('#botLeft').css('background-color', 'orange');
+      $('#topRight').css('background-color', '#ff8000');
+      $('#midCenter').css('background-color', '#ff8000');
+      $('#botLeft').css('background-color', '#ff8000');
       winner.show('player')
     }
 
@@ -63,27 +63,27 @@ function checkWinner(lastMove, board, winner) {
       case 'topLeft':
         if (board.topHorizontal === (0 || null)) {
           if (board.topCenter === 'computer' && board.topRight === 'computer') {
-            $('#topLeft').css('background-color', 'orange');
-            $('#topCenter').css('background-color', 'orange');
-            $('#topRight').css('background-color', 'orange');
+            $('#topLeft').css('background-color', '#ff8000');
+            $('#topCenter').css('background-color', '#ff8000');
+            $('#topRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.verticalZero === (0 || null)) {
           if (board.midLeft === 'computer' && board.botLeft === 'computer') {
-            $('#topLeft').css('background-color', 'orange');
-            $('#midLeft').css('background-color', 'orange');
-            $('#botLeft').css('background-color', 'orange');
+            $('#topLeft').css('background-color', '#ff8000');
+            $('#midLeft').css('background-color', '#ff8000');
+            $('#botLeft').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.diagonalDown === (0 || null)) {
           if (board.midCenter === 'computer' && board.botRight === 'computer') {
-            $('#topLeft').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#botRight').css('background-color', 'orange');
+            $('#topLeft').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#botRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
@@ -92,18 +92,18 @@ function checkWinner(lastMove, board, winner) {
       case 'topCenter':
         if (board.topHorizontal === (0 || null)) {
           if (board.topLeft === 'computer' && board.topRight === 'computer') {
-            $('#topLeft').css('background-color', 'orange');
-            $('#topCenter').css('background-color', 'orange');
-            $('#topRight').css('background-color', 'orange');
+            $('#topLeft').css('background-color', '#ff8000');
+            $('#topCenter').css('background-color', '#ff8000');
+            $('#topRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.verticalOne === (0 || null)) {
           if (board.midCenter === 'computer' && board.botCenter === 'computer') {
-            $('#topCenter').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#botCenter').css('background-color', 'orange');
+            $('#topCenter').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#botCenter').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
@@ -112,27 +112,27 @@ function checkWinner(lastMove, board, winner) {
       case 'topRight':
         if (board.topHorizontal === (0 || null)) {
           if (board.topLeft === 'computer' && board.topCenter === 'computer') {
-            $('#topLeft').css('background-color', 'orange');
-            $('#topCenter').css('background-color', 'orange');
-            $('#topRight').css('background-color', 'orange');
+            $('#topLeft').css('background-color', '#ff8000');
+            $('#topCenter').css('background-color', '#ff8000');
+            $('#topRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.verticalTwo === (0 || null)) {
           if (board.midRight === 'computer' && board.botRight === 'computer') {
-            $('#topRight').css('background-color', 'orange');
-            $('#midRight').css('background-color', 'orange');
-            $('#botRight').css('background-color', 'orange');
+            $('#topRight').css('background-color', '#ff8000');
+            $('#midRight').css('background-color', '#ff8000');
+            $('#botRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.diagonalUp === (0 || null)) {
           if (board.midCenter === 'computer' && board.botLeft === 'computer') {
-            $('#topRight').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#botLeft').css('background-color', 'orange');
+            $('#topRight').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#botLeft').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
@@ -141,18 +141,18 @@ function checkWinner(lastMove, board, winner) {
       case 'midLeft':
         if (board.midHorizontal === (0 || null)) {
           if (board.midCenter === 'computer' && board.midRight === 'computer') {
-            $('#midLeft').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#midRight').css('background-color', 'orange');
+            $('#midLeft').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#midRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.verticalZero === (0 || null)) {
           if (board.topLeft === 'computer' && board.botLeft === 'computer') {
-            $('#topLeft').css('background-color', 'orange');
-            $('#midLeft').css('background-color', 'orange');
-            $('#botLeft').css('background-color', 'orange');
+            $('#topLeft').css('background-color', '#ff8000');
+            $('#midLeft').css('background-color', '#ff8000');
+            $('#botLeft').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
@@ -161,36 +161,36 @@ function checkWinner(lastMove, board, winner) {
       case 'midCenter':
         if (board.midHorizontal === (0 || null)) {
           if (board.midLeft === 'computer' && board.midRight === 'computer') {
-            $('#midLeft').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#midRight').css('background-color', 'orange');
+            $('#midLeft').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#midRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.verticalOne === (0 || null)) {
           if (board.topCenter === 'computer' && board.botCenter === 'computer') {
-            $('#topCenter').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#botCenter').css('background-color', 'orange');
+            $('#topCenter').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#botCenter').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.diagonalUp === (0 || null)) {
           if (board.botLeft === 'computer' && board.topRight === 'computer') {
-            $('#topRight').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#botLeft').css('background-color', 'orange');
+            $('#topRight').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#botLeft').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.diagonalDown === (0 || null)) {
           if (board.topLeft === 'computer' && board.botRight === 'computer') {
-            $('#topLeft').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#botRight').css('background-color', 'orange');
+            $('#topLeft').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#botRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
@@ -199,18 +199,18 @@ function checkWinner(lastMove, board, winner) {
       case 'midRight':
         if (board.midHorizontal === (0 || null)) {
           if (board.midLeft === 'computer' && board.midCenter === 'computer') {
-            $('#midLeft').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#midRight').css('background-color', 'orange');
+            $('#midLeft').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#midRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.verticalTwo === (0 || null)) {
           if (board.topRight === 'computer' && board.botRight === 'computer') {
-            $('#topRight').css('background-color', 'orange');
-            $('#midRight').css('background-color', 'orange');
-            $('#botRight').css('background-color', 'orange');
+            $('#topRight').css('background-color', '#ff8000');
+            $('#midRight').css('background-color', '#ff8000');
+            $('#botRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
@@ -219,27 +219,27 @@ function checkWinner(lastMove, board, winner) {
       case 'botLeft':
         if (board.botHorizontal === (0 || null)) {
           if (board.botCenter === 'computer' && board.botRight === 'computer') {
-            $('#botLeft').css('background-color', 'orange');
-            $('#botCenter').css('background-color', 'orange');
-            $('#botRight').css('background-color', 'orange');
+            $('#botLeft').css('background-color', '#ff8000');
+            $('#botCenter').css('background-color', '#ff8000');
+            $('#botRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.verticalZero === (0 || null)) {
           if (board.midLeft === 'computer' && board.topLeft === 'computer') {
-            $('#topLeft').css('background-color', 'orange');
-            $('#midLeft').css('background-color', 'orange');
-            $('#botLeft').css('background-color', 'orange');
+            $('#topLeft').css('background-color', '#ff8000');
+            $('#midLeft').css('background-color', '#ff8000');
+            $('#botLeft').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.diagonalUp === (0 || null)) {
           if (board.midCenter === 'computer' && board.topRight === 'computer') {
-            $('#topRight').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#botLeft').css('background-color', 'orange');
+            $('#topRight').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#botLeft').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
@@ -248,18 +248,18 @@ function checkWinner(lastMove, board, winner) {
       case 'botCenter':
         if (board.botHorizontal === (0 || null)) {
           if (board.botLeft === 'computer' && board.botRight === 'computer') {
-            $('#botLeft').css('background-color', 'orange');
-            $('#botCenter').css('background-color', 'orange');
-            $('#botRight').css('background-color', 'orange');
+            $('#botLeft').css('background-color', '#ff8000');
+            $('#botCenter').css('background-color', '#ff8000');
+            $('#botRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.verticalOne === (0 || null)) {
           if (board.midCenter === 'computer' && board.topCenter === 'computer') {
-            $('#topCenter').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#botCenter').css('background-color', 'orange');
+            $('#topCenter').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#botCenter').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
@@ -268,27 +268,27 @@ function checkWinner(lastMove, board, winner) {
       case 'botRight':
         if (board.botHorizontal === (0 || null)) {
           if (board.botLeft === 'computer' && board.botCenter === 'computer') {
-            $('#botLeft').css('background-color', 'orange');
-            $('#botCenter').css('background-color', 'orange');
-            $('#botRight').css('background-color', 'orange');
+            $('#botLeft').css('background-color', '#ff8000');
+            $('#botCenter').css('background-color', '#ff8000');
+            $('#botRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.verticalTwo === (0 || null)) {
           if (board.midRight === 'computer' && board.topRight === 'computer') {
-            $('#topRight').css('background-color', 'orange');
-            $('#midRight').css('background-color', 'orange');
-            $('#botRight').css('background-color', 'orange');
+            $('#topRight').css('background-color', '#ff8000');
+            $('#midRight').css('background-color', '#ff8000');
+            $('#botRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.diagonalDown === (0 || null)) {
           if (board.midCenter === 'computer' && board.topLeft === 'computer') {
-            $('#topLeft').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#botRight').css('background-color', 'orange');
+            $('#topLeft').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#botRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
