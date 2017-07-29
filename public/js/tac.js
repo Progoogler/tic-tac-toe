@@ -144,21 +144,89 @@ function tac(board, winner, game) {
   }
 
   if (!plot) {
+    if (board.playCount === 3) {
+      if ((board.topLeft === 'player' && board.botRight === 'player') || (board.topRight === 'player' && board.botLeft === 'player')) {
+        var side = Math.floor(Math.random() * 4);
+        switch (side) {
+          case 0:
+            if (board.topCenter !== Number.POSITIVE_INFINITY) {
+              side = 1;
+            } else {
+              board.computerTic('topCenter');
+              return;
+            }
+          case 1:
+            if (board.botCenter !== Number.POSITIVE_INFINITY) {
+              side = 2;
+            } else {
+              board.computerTic('botCenter');
+              return;
+            }
+          case 2:
+            if (board.midLeft !== Number.POSITIVE_INFINITY) {
+              side = 3;
+            } else {
+              board.computerTic('midLeft');
+              return;
+            }
+          case 3:
+            if (board.midRight !== Number.POSITIVE_INFINITY) {
+              side = 0;
+            } else {
+              board.computerTic('midRight');
+              return;
+            }
+        }
+      }
+
+      var corner = Math.floor(Math.random() * 4);
+      switch (corner) {
+        case 0:
+          if (board.topLeft !== Number.POSITIVE_INFINITY) {
+            corner = 1;
+          } else {
+            board.computerTic('topLeft');
+            return;
+          }
+        case 1:
+          if (board.botRight !== Number.POSITIVE_INFINITY) {
+            corner = 2;
+          } else {
+            board.computerTic('botRight');
+            return;
+          }
+        case 2:
+          if (board.topRight !== Number.POSITIVE_INFINITY) {
+            corner = 3;
+          } else {
+            board.computerTic('topRight');
+            return;
+          }
+        case 3:
+          if (board.botLeft !== Number.POSITIVE_INFINITY) {
+            corner = 0;
+          } else {
+            board.computerTic('botLeft');
+            return;
+          }
+      }
+    }
+
     for (var winning in winner) {
       if (typeof(winner[winning]) === 'object') continue;
-      if (winner[winning] >= 1) {
-        switch(winning) {
+      if (winner[winning] >= 1 && winning !== '_uid' && winner[winning] !== true) {
+        switch (winning) {
           case 'cth':
             if (board.topLeft === Number.POSITIVE_INFINITY) {
               board.computerTic('topLeft');
               return;
             }
-            if (board.topCenter === Number.POSITIVE_INFINITY) {
-              board.computerTic('topCenter');
-              return;
-            }
             if (board.topRight === Number.POSITIVE_INFINITY) {
               board.computerTic('topRight');
+              return;
+            }
+            if (board.topCenter === Number.POSITIVE_INFINITY) {
+              board.computerTic('topCenter');
               return;
             }
           case 'cmh':
@@ -166,12 +234,12 @@ function tac(board, winner, game) {
               board.computerTic('midLeft');
               return;
             }
-            if (board.midCenter === Number.POSITIVE_INFINITY) {
-              board.computerTic('midCenter');
-              return;
-            }
             if (board.midRight === Number.POSITIVE_INFINITY) {
               board.computerTic('midRight');
+              return;
+            }
+            if (board.midCenter === Number.POSITIVE_INFINITY) {
+              board.computerTic('midCenter');
               return;
             }
           case 'cbh':
@@ -179,12 +247,12 @@ function tac(board, winner, game) {
               board.computerTic('botLeft');
               return;
             }
-            if (board.botCenter === Number.POSITIVE_INFINITY) {
-              board.computerTic('botCenter');
-              return;
-            }
             if (board.botRight === Number.POSITIVE_INFINITY) {
               board.computerTic('botRight');
+              return;
+            }
+            if (board.botCenter === Number.POSITIVE_INFINITY) {
+              board.computerTic('botCenter');
               return;
             }
           case 'cvz':
@@ -192,12 +260,12 @@ function tac(board, winner, game) {
               board.computerTic('topLeft');
               return;
             }
-            if (board.midLeft === Number.POSITIVE_INFINITY) {
-              board.computerTic('midLeft');
-              return;
-            }
             if (board.botLeft === Number.POSITIVE_INFINITY) {
               board.computerTic('botLeft');
+              return;
+            }
+            if (board.midLeft === Number.POSITIVE_INFINITY) {
+              board.computerTic('midLeft');
               return;
             }
           case 'cvo':
@@ -214,12 +282,12 @@ function tac(board, winner, game) {
               board.computerTic('topRight');
               return;
             }
-            if (board.midRight === Number.POSITIVE_INFINITY) {
-              board.computerTic('midRight');
-              return;
-            }
             if (board.botRight === Number.POSITIVE_INFINITY) {
               board.computerTic('botRight');
+              return;
+            }
+            if (board.midRight === Number.POSITIVE_INFINITY) {
+              board.computerTic('midRight');
               return;
             }
           case 'cdd':
@@ -259,7 +327,7 @@ function tac(board, winner, game) {
         if (game[0][i] === undefined) {
           board.computerTic(0, i);
           board[plot] = null;
-          i = 3;
+          break;
         }
       }
       break;
@@ -268,7 +336,7 @@ function tac(board, winner, game) {
         if (game[1][i] === undefined) {
           board.computerTic(1, i);
           board[plot] = null;
-          i = 3;
+          break;
         }
       }
       break;
@@ -277,7 +345,7 @@ function tac(board, winner, game) {
         if (game[2][i] === undefined) {
           board.computerTic(2, i);
           board[plot] = null;
-          i = 3;
+          break;
         }
       }
       break;
@@ -286,7 +354,7 @@ function tac(board, winner, game) {
         if (game[i][0] === undefined) {
           board.computerTic(i, 0)
           board[plot] = null;
-          i = 3;
+          break;
         }
       }
       break;
@@ -295,7 +363,7 @@ function tac(board, winner, game) {
         if (game[i][1] === undefined) {
           board.computerTic(i, 1)
           board[plot] = null;
-          i = 3;
+          break;
         }
       }
       break;
@@ -304,7 +372,7 @@ function tac(board, winner, game) {
         if (game[i][2] === undefined) {
           board.computerTic(i, 2)
           board[plot] = null;
-          i = 3;
+          break;
         }
       }
       break;
