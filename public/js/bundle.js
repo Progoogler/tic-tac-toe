@@ -8,51 +8,51 @@ function checkWinner(lastMove, board, winner) {
       board.diagonalDown === 3 || board.diagonalUp === 3) {
 
     if (board.topHorizontal === 3) {
-      $('#topLeft').css('background-color', 'orange');
-      $('#topCenter').css('background-color', 'orange');
-      $('#topRight').css('background-color', 'orange');
+      $('#topLeft').css('background-color', '#ff8000');
+      $('#topCenter').css('background-color', '#ff8000');
+      $('#topRight').css('background-color', '#ff8000');
       winner.show('player')
     }
     if (board.midHorizontal === 3) {
-      $('#midLeft').css('background-color', 'orange');
-      $('#midCenter').css('background-color', 'orange');
-      $('#midRight').css('background-color', 'orange');
+      $('#midLeft').css('background-color', '#ff8000');
+      $('#midCenter').css('background-color', '#ff8000');
+      $('#midRight').css('background-color', '#ff8000');
       winner.show('player')
     }
     if (board.botHorizontal === 3) {
-      $('#botLeft').css('background-color', 'orange');
-      $('#botCenter').css('background-color', 'orange');
-      $('#botRight').css('background-color', 'orange');
+      $('#botLeft').css('background-color', '#ff8000');
+      $('#botCenter').css('background-color', '#ff8000');
+      $('#botRight').css('background-color', '#ff8000');
       winner.show('player')
     }
     if (board.verticalZero === 3) {
-      $('#topLeft').css('background-color', 'orange');
-      $('#midLeft').css('background-color', 'orange');
-      $('#botLeft').css('background-color', 'orange');
+      $('#topLeft').css('background-color', '#ff8000');
+      $('#midLeft').css('background-color', '#ff8000');
+      $('#botLeft').css('background-color', '#ff8000');
       winner.show('player')
     }
     if (board.verticalOne === 3) {
-      $('#topCenter').css('background-color', 'orange');
-      $('#midCenter').css('background-color', 'orange');
-      $('#botCenter').css('background-color', 'orange');
+      $('#topCenter').css('background-color', '#ff8000');
+      $('#midCenter').css('background-color', '#ff8000');
+      $('#botCenter').css('background-color', '#ff8000');
       winner.show('player')
     }
     if (board.verticalTwo === 3) {
-      $('#topRight').css('background-color', 'orange');
-      $('#midRight').css('background-color', 'orange');
-      $('#botRight').css('background-color', 'orange');
+      $('#topRight').css('background-color', '#ff8000');
+      $('#midRight').css('background-color', '#ff8000');
+      $('#botRight').css('background-color', '#ff8000');
       winner.show('player')
     }
     if (board.diagonalDown === 3) {
-      $('#topLeft').css('background-color', 'orange');
-      $('#midCenter').css('background-color', 'orange');
-      $('#botRight').css('background-color', 'orange');
+      $('#topLeft').css('background-color', '#ff8000');
+      $('#midCenter').css('background-color', '#ff8000');
+      $('#botRight').css('background-color', '#ff8000');
       winner.show('player')
     }
     if (board.diagonalUp === 3) {
-      $('#topRight').css('background-color', 'orange');
-      $('#midCenter').css('background-color', 'orange');
-      $('#botLeft').css('background-color', 'orange');
+      $('#topRight').css('background-color', '#ff8000');
+      $('#midCenter').css('background-color', '#ff8000');
+      $('#botLeft').css('background-color', '#ff8000');
       winner.show('player')
     }
 
@@ -64,27 +64,27 @@ function checkWinner(lastMove, board, winner) {
       case 'topLeft':
         if (board.topHorizontal === (0 || null)) {
           if (board.topCenter === 'computer' && board.topRight === 'computer') {
-            $('#topLeft').css('background-color', 'orange');
-            $('#topCenter').css('background-color', 'orange');
-            $('#topRight').css('background-color', 'orange');
+            $('#topLeft').css('background-color', '#ff8000');
+            $('#topCenter').css('background-color', '#ff8000');
+            $('#topRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.verticalZero === (0 || null)) {
           if (board.midLeft === 'computer' && board.botLeft === 'computer') {
-            $('#topLeft').css('background-color', 'orange');
-            $('#midLeft').css('background-color', 'orange');
-            $('#botLeft').css('background-color', 'orange');
+            $('#topLeft').css('background-color', '#ff8000');
+            $('#midLeft').css('background-color', '#ff8000');
+            $('#botLeft').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.diagonalDown === (0 || null)) {
           if (board.midCenter === 'computer' && board.botRight === 'computer') {
-            $('#topLeft').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#botRight').css('background-color', 'orange');
+            $('#topLeft').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#botRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
@@ -93,18 +93,18 @@ function checkWinner(lastMove, board, winner) {
       case 'topCenter':
         if (board.topHorizontal === (0 || null)) {
           if (board.topLeft === 'computer' && board.topRight === 'computer') {
-            $('#topLeft').css('background-color', 'orange');
-            $('#topCenter').css('background-color', 'orange');
-            $('#topRight').css('background-color', 'orange');
+            $('#topLeft').css('background-color', '#ff8000');
+            $('#topCenter').css('background-color', '#ff8000');
+            $('#topRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.verticalOne === (0 || null)) {
           if (board.midCenter === 'computer' && board.botCenter === 'computer') {
-            $('#topCenter').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#botCenter').css('background-color', 'orange');
+            $('#topCenter').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#botCenter').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
@@ -113,27 +113,27 @@ function checkWinner(lastMove, board, winner) {
       case 'topRight':
         if (board.topHorizontal === (0 || null)) {
           if (board.topLeft === 'computer' && board.topCenter === 'computer') {
-            $('#topLeft').css('background-color', 'orange');
-            $('#topCenter').css('background-color', 'orange');
-            $('#topRight').css('background-color', 'orange');
+            $('#topLeft').css('background-color', '#ff8000');
+            $('#topCenter').css('background-color', '#ff8000');
+            $('#topRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.verticalTwo === (0 || null)) {
           if (board.midRight === 'computer' && board.botRight === 'computer') {
-            $('#topRight').css('background-color', 'orange');
-            $('#midRight').css('background-color', 'orange');
-            $('#botRight').css('background-color', 'orange');
+            $('#topRight').css('background-color', '#ff8000');
+            $('#midRight').css('background-color', '#ff8000');
+            $('#botRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.diagonalUp === (0 || null)) {
           if (board.midCenter === 'computer' && board.botLeft === 'computer') {
-            $('#topRight').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#botLeft').css('background-color', 'orange');
+            $('#topRight').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#botLeft').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
@@ -142,18 +142,18 @@ function checkWinner(lastMove, board, winner) {
       case 'midLeft':
         if (board.midHorizontal === (0 || null)) {
           if (board.midCenter === 'computer' && board.midRight === 'computer') {
-            $('#midLeft').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#midRight').css('background-color', 'orange');
+            $('#midLeft').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#midRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.verticalZero === (0 || null)) {
           if (board.topLeft === 'computer' && board.botLeft === 'computer') {
-            $('#topLeft').css('background-color', 'orange');
-            $('#midLeft').css('background-color', 'orange');
-            $('#botLeft').css('background-color', 'orange');
+            $('#topLeft').css('background-color', '#ff8000');
+            $('#midLeft').css('background-color', '#ff8000');
+            $('#botLeft').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
@@ -162,36 +162,36 @@ function checkWinner(lastMove, board, winner) {
       case 'midCenter':
         if (board.midHorizontal === (0 || null)) {
           if (board.midLeft === 'computer' && board.midRight === 'computer') {
-            $('#midLeft').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#midRight').css('background-color', 'orange');
+            $('#midLeft').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#midRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.verticalOne === (0 || null)) {
           if (board.topCenter === 'computer' && board.botCenter === 'computer') {
-            $('#topCenter').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#botCenter').css('background-color', 'orange');
+            $('#topCenter').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#botCenter').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.diagonalUp === (0 || null)) {
           if (board.botLeft === 'computer' && board.topRight === 'computer') {
-            $('#topRight').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#botLeft').css('background-color', 'orange');
+            $('#topRight').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#botLeft').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.diagonalDown === (0 || null)) {
           if (board.topLeft === 'computer' && board.botRight === 'computer') {
-            $('#topLeft').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#botRight').css('background-color', 'orange');
+            $('#topLeft').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#botRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
@@ -200,18 +200,18 @@ function checkWinner(lastMove, board, winner) {
       case 'midRight':
         if (board.midHorizontal === (0 || null)) {
           if (board.midLeft === 'computer' && board.midCenter === 'computer') {
-            $('#midLeft').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#midRight').css('background-color', 'orange');
+            $('#midLeft').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#midRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.verticalTwo === (0 || null)) {
           if (board.topRight === 'computer' && board.botRight === 'computer') {
-            $('#topRight').css('background-color', 'orange');
-            $('#midRight').css('background-color', 'orange');
-            $('#botRight').css('background-color', 'orange');
+            $('#topRight').css('background-color', '#ff8000');
+            $('#midRight').css('background-color', '#ff8000');
+            $('#botRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
@@ -220,27 +220,27 @@ function checkWinner(lastMove, board, winner) {
       case 'botLeft':
         if (board.botHorizontal === (0 || null)) {
           if (board.botCenter === 'computer' && board.botRight === 'computer') {
-            $('#botLeft').css('background-color', 'orange');
-            $('#botCenter').css('background-color', 'orange');
-            $('#botRight').css('background-color', 'orange');
+            $('#botLeft').css('background-color', '#ff8000');
+            $('#botCenter').css('background-color', '#ff8000');
+            $('#botRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.verticalZero === (0 || null)) {
           if (board.midLeft === 'computer' && board.topLeft === 'computer') {
-            $('#topLeft').css('background-color', 'orange');
-            $('#midLeft').css('background-color', 'orange');
-            $('#botLeft').css('background-color', 'orange');
+            $('#topLeft').css('background-color', '#ff8000');
+            $('#midLeft').css('background-color', '#ff8000');
+            $('#botLeft').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.diagonalUp === (0 || null)) {
           if (board.midCenter === 'computer' && board.topRight === 'computer') {
-            $('#topRight').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#botLeft').css('background-color', 'orange');
+            $('#topRight').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#botLeft').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
@@ -249,18 +249,18 @@ function checkWinner(lastMove, board, winner) {
       case 'botCenter':
         if (board.botHorizontal === (0 || null)) {
           if (board.botLeft === 'computer' && board.botRight === 'computer') {
-            $('#botLeft').css('background-color', 'orange');
-            $('#botCenter').css('background-color', 'orange');
-            $('#botRight').css('background-color', 'orange');
+            $('#botLeft').css('background-color', '#ff8000');
+            $('#botCenter').css('background-color', '#ff8000');
+            $('#botRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.verticalOne === (0 || null)) {
           if (board.midCenter === 'computer' && board.topCenter === 'computer') {
-            $('#topCenter').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#botCenter').css('background-color', 'orange');
+            $('#topCenter').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#botCenter').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
@@ -269,27 +269,27 @@ function checkWinner(lastMove, board, winner) {
       case 'botRight':
         if (board.botHorizontal === (0 || null)) {
           if (board.botLeft === 'computer' && board.botCenter === 'computer') {
-            $('#botLeft').css('background-color', 'orange');
-            $('#botCenter').css('background-color', 'orange');
-            $('#botRight').css('background-color', 'orange');
+            $('#botLeft').css('background-color', '#ff8000');
+            $('#botCenter').css('background-color', '#ff8000');
+            $('#botRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.verticalTwo === (0 || null)) {
           if (board.midRight === 'computer' && board.topRight === 'computer') {
-            $('#topRight').css('background-color', 'orange');
-            $('#midRight').css('background-color', 'orange');
-            $('#botRight').css('background-color', 'orange');
+            $('#topRight').css('background-color', '#ff8000');
+            $('#midRight').css('background-color', '#ff8000');
+            $('#botRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
         }
         if (board.diagonalDown === (0 || null)) {
           if (board.midCenter === 'computer' && board.topLeft === 'computer') {
-            $('#topLeft').css('background-color', 'orange');
-            $('#midCenter').css('background-color', 'orange');
-            $('#botRight').css('background-color', 'orange');
+            $('#topLeft').css('background-color', '#ff8000');
+            $('#midCenter').css('background-color', '#ff8000');
+            $('#botRight').css('background-color', '#ff8000');
             winner.show('computer');
             return true;
           }
@@ -882,21 +882,92 @@ function tac(board, winner, game) {
   }
 
   if (!plot) {
+    console.log(board.playCount, board.topRight, board.botLeft)
+    if (board.playCount === 3) {
+      if ((board.topLeft === 'player' && board.botRight === 'player') || (board.topRight === 'player' && board.botLeft === 'player')) {
+        var side = Math.floor(Math.random() * 4);
+        switch (side) {
+          case 0:
+            if (board.topCenter !== Number.POSITIVE_INFINITY) {
+              side = 1;
+            } else {
+              board.computerTic('topCenter');
+              return;
+            }
+          case 1:
+            if (board.botCenter !== Number.POSITIVE_INFINITY) {
+              side = 2;
+            } else {
+              board.computerTic('botCenter');
+              return;
+            }
+          case 2:
+            if (board.midLeft !== Number.POSITIVE_INFINITY) {
+              side = 3;
+            } else {
+              board.computerTic('midLeft');
+              return;
+            }
+          case 3:
+            if (board.midRight !== Number.POSITIVE_INFINITY) {
+              side = 0;
+            } else {
+              board.computerTic('midRight');
+              return;
+            }
+        }
+      }
+
+      var corner = Math.floor(Math.random() * 4);
+      console.log(corner)
+      switch (corner) {
+        case 0:
+          if (board.topLeft !== Number.POSITIVE_INFINITY) {
+            corner = 1;
+          } else {
+            board.computerTic('topLeft');
+            return;
+          }
+        case 1:
+          if (board.botRight !== Number.POSITIVE_INFINITY) {
+            corner = 2;
+          } else {
+            board.computerTic('botRight');
+            return;
+          }
+        case 2:
+          if (board.topRight !== Number.POSITIVE_INFINITY) {
+            corner = 3;
+          } else {
+            board.computerTic('topRight');
+            return;
+          }
+        case 3:
+          if (board.botLeft !== Number.POSITIVE_INFINITY) {
+            corner = 0;
+          } else {
+            board.computerTic('botLeft');
+            return;
+          }
+      }
+    }
+
     for (var winning in winner) {
       if (typeof(winner[winning]) === 'object') continue;
-      if (winner[winning] >= 1) {
-        switch(winning) {
+      if (winner[winning] >= 1 && winning !== '_uid' && winner[winning] !== true) {
+        console.log('no plot', winner[winning], winning)
+        switch (winning) {
           case 'cth':
             if (board.topLeft === Number.POSITIVE_INFINITY) {
               board.computerTic('topLeft');
               return;
             }
-            if (board.topCenter === Number.POSITIVE_INFINITY) {
-              board.computerTic('topCenter');
-              return;
-            }
             if (board.topRight === Number.POSITIVE_INFINITY) {
               board.computerTic('topRight');
+              return;
+            }
+            if (board.topCenter === Number.POSITIVE_INFINITY) {
+              board.computerTic('topCenter');
               return;
             }
           case 'cmh':
@@ -904,12 +975,12 @@ function tac(board, winner, game) {
               board.computerTic('midLeft');
               return;
             }
-            if (board.midCenter === Number.POSITIVE_INFINITY) {
-              board.computerTic('midCenter');
-              return;
-            }
             if (board.midRight === Number.POSITIVE_INFINITY) {
               board.computerTic('midRight');
+              return;
+            }
+            if (board.midCenter === Number.POSITIVE_INFINITY) {
+              board.computerTic('midCenter');
               return;
             }
           case 'cbh':
@@ -917,12 +988,12 @@ function tac(board, winner, game) {
               board.computerTic('botLeft');
               return;
             }
-            if (board.botCenter === Number.POSITIVE_INFINITY) {
-              board.computerTic('botCenter');
-              return;
-            }
             if (board.botRight === Number.POSITIVE_INFINITY) {
               board.computerTic('botRight');
+              return;
+            }
+            if (board.botCenter === Number.POSITIVE_INFINITY) {
+              board.computerTic('botCenter');
               return;
             }
           case 'cvz':
@@ -930,12 +1001,12 @@ function tac(board, winner, game) {
               board.computerTic('topLeft');
               return;
             }
-            if (board.midLeft === Number.POSITIVE_INFINITY) {
-              board.computerTic('midLeft');
-              return;
-            }
             if (board.botLeft === Number.POSITIVE_INFINITY) {
               board.computerTic('botLeft');
+              return;
+            }
+            if (board.midLeft === Number.POSITIVE_INFINITY) {
+              board.computerTic('midLeft');
               return;
             }
           case 'cvo':
@@ -952,12 +1023,12 @@ function tac(board, winner, game) {
               board.computerTic('topRight');
               return;
             }
-            if (board.midRight === Number.POSITIVE_INFINITY) {
-              board.computerTic('midRight');
-              return;
-            }
             if (board.botRight === Number.POSITIVE_INFINITY) {
               board.computerTic('botRight');
+              return;
+            }
+            if (board.midRight === Number.POSITIVE_INFINITY) {
+              board.computerTic('midRight');
               return;
             }
           case 'cdd':
@@ -997,7 +1068,7 @@ function tac(board, winner, game) {
         if (game[0][i] === undefined) {
           board.computerTic(0, i);
           board[plot] = null;
-          i = 3;
+          break;
         }
       }
       break;
@@ -1006,7 +1077,7 @@ function tac(board, winner, game) {
         if (game[1][i] === undefined) {
           board.computerTic(1, i);
           board[plot] = null;
-          i = 3;
+          break;
         }
       }
       break;
@@ -1015,7 +1086,7 @@ function tac(board, winner, game) {
         if (game[2][i] === undefined) {
           board.computerTic(2, i);
           board[plot] = null;
-          i = 3;
+          break;
         }
       }
       break;
@@ -1024,7 +1095,7 @@ function tac(board, winner, game) {
         if (game[i][0] === undefined) {
           board.computerTic(i, 0)
           board[plot] = null;
-          i = 3;
+          break;
         }
       }
       break;
@@ -1033,7 +1104,7 @@ function tac(board, winner, game) {
         if (game[i][1] === undefined) {
           board.computerTic(i, 1)
           board[plot] = null;
-          i = 3;
+          break;
         }
       }
       break;
@@ -1042,7 +1113,7 @@ function tac(board, winner, game) {
         if (game[i][2] === undefined) {
           board.computerTic(i, 2)
           board[plot] = null;
-          i = 3;
+          break;
         }
       }
       break;
