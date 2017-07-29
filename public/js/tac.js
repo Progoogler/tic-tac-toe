@@ -1,9 +1,8 @@
 function tac(board, winner, game) {
-  console.log('board playcount', board.playCount)
   var plot;
   for (var row in board) {
     if (board[row] === 2 && row !== 'playCount') {
-      plot = row; console.log('plot ', plot)
+      plot = row;
       break;
     }
   }
@@ -253,7 +252,6 @@ function tac(board, winner, game) {
     }
   }
 
-console.log('THERE\'S A PLOT! HERE IT IS! ', plot)
   var i = 0;
   switch(plot) {
     case 'topHorizontal':
