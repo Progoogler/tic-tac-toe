@@ -882,7 +882,6 @@ function tac(board, winner, game) {
   }
 
   if (!plot) {
-    console.log(board.playCount, board.topRight, board.botLeft)
     if (board.playCount === 3) {
       if ((board.topLeft === 'player' && board.botRight === 'player') || (board.topRight === 'player' && board.botLeft === 'player')) {
         var side = Math.floor(Math.random() * 4);
@@ -919,7 +918,6 @@ function tac(board, winner, game) {
       }
 
       var corner = Math.floor(Math.random() * 4);
-      console.log(corner)
       switch (corner) {
         case 0:
           if (board.topLeft !== Number.POSITIVE_INFINITY) {
@@ -955,7 +953,6 @@ function tac(board, winner, game) {
     for (var winning in winner) {
       if (typeof(winner[winning]) === 'object') continue;
       if (winner[winning] >= 1 && winning !== '_uid' && winner[winning] !== true) {
-        console.log('no plot', winner[winning], winning)
         switch (winning) {
           case 'cth':
             if (board.topLeft === Number.POSITIVE_INFINITY) {
@@ -1130,7 +1127,12 @@ function tac(board, winner, game) {
       board[plot] = null;
       break;
     default:
-      console.log('Error! Something went wrong.');
+      for (var remainder in board) {
+        if (board[remainder] === Number.POSITIVE_INFINITY) {
+          board.computerTic(remainder);
+          return;
+        }
+      }
   }
 }
 
