@@ -1,44 +1,94 @@
 body {
+  background-image: url('../images/square-background.jpg');
   text-align: center;
+  overflow: hidden;
+}
+
+#title {
+  font-size: 6em;
+  color: white;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  margin-bottom: .3em;
+  margin-top: .4em;
+}
+
+#winner {
+  height: 1em;
+  color: #FF8C00;
+  font-weight: bold;
+  font-size: 3em;
+  margin-top: -1em;
+  margin-bottom: 1em;
+}
+
+#options {
+  margin-left: 23em;
+}
+
+.play-option {
+  display: inline-block;
+  padding-right: 1em;
+  font-size: 1.5em;
+}
+
+.play-option:hover {
+  cursor: pointer;
+}
+
+#play-x {
+  text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff;
+}
+
+#play-o {
+  color: white;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
 #board {
-  /*margin: 10em 0;*/
+  white-space: nowrap;
 }
 
 .row {
-  display: inline-block;
   margin: 0;
 }
 
 .slot {
-  display: -webkit-flex; /* Safari */
+  display: -webkit-inline-flex; /* Safari */
   -webkit-align-items: center; /* Safari 7.0+ */
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 10em;
   height: 10em;
-  border: 1px solid red;
+  border: 1px solid white;
   margin: .3em;
   margin-bottom: .8em;
+
 }
 
 .slot:hover {
-  background-color: blue;
+  border-color: #FF8C00;
+  border-width: 4px;
   cursor: pointer;
 }
 
 .x {
+  text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff;
   visibility: hidden;
-  font-size: 4em;
+  font-size: 6em;
 }
 
 .o {
+  color: white;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
   visibility: hidden;
-  font-size: 4em;
+  font-size: 6em;
 }
 
-#reset:hover {
-  cursor: pointer;
+.btn:focus {
+   outline: none !important;
+}
+
+#reset {
+  margin-top: 1em;
 }
