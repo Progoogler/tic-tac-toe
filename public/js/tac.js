@@ -389,7 +389,12 @@ function tac(board, winner, game) {
       board[plot] = null;
       break;
     default:
-      console.log('Error! Something went wrong.');
+      for (var remainder in board) {
+        if (board[remainder] === Number.POSITIVE_INFINITY) {
+          board.computerTic(remainder);
+          return;
+        }
+      }
   }
 }
 
