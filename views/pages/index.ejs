@@ -8,9 +8,17 @@
 
   <div id="title">Tic Tac Toe</div>
 
-  <div id="winner"></div>
+  <div id="winner"> </div>
+
+
 
   <div id="board">
+
+    <div id="options">
+      <div id="play-x" class="play-option" v-on:click="pickOption('x')">x</div>
+      <div id="play-o" class="play-option" v-on:click="pickOption('o')">o</div>
+    </div>
+    
     <div class="topRow row">
       <div id="topLeft" class="slot" v-on:click="tic('topLeft')">
         <div class="x">x</div><div class="o">o</div>
@@ -45,7 +53,7 @@
       </div>
     </div>
 
-    <div id="reset" v-on:click="reset()">New game</div>
+    <button id="reset" class="btn btn-primary" v-on:click="reset()">New game</div>
   </div>
 
 
