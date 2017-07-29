@@ -39,6 +39,16 @@ var board = new Vue({
     botRight: Number.POSITIVE_INFINITY
   },
   methods: {
+    pickOption: function(char) {
+      if (this.playCount > 0 && !winner.decided) return;
+      if (char === 'x') {
+        this.player = 'x';
+        this.computer = 'o';
+      } else {
+        this.player = 'o';
+        this.computer = 'x';
+      }
+    },
     tic: function(location) {
       if (winner.decided) return;
 
@@ -139,7 +149,7 @@ var board = new Vue({
         default:
           console.log('something isn\'t right...');
       }
-      this.playCount++; console.log("tic'd location:", location)
+      this.playCount++;
 
       $('#' + location + ' > .' + board.player).css({'visibility': 'visible', 'display': 'block'});
       $('#' + location + ' > .' + board.computer).css({'display': 'none'});
@@ -148,7 +158,6 @@ var board = new Vue({
     },
     computerTic: function(row, col) {
       if (arguments.length === 1) {
-        console.log('1 arg start cputic ', row)
         // 'row' is the slot name
         loop1 :
         for (var i = 0; i < slotNames.length; i++) {
@@ -165,7 +174,6 @@ var board = new Vue({
         this[row] = 'computer';
         this.playCount++;
         if (checkWinner(row, board, winner)) return;
-        console.log('im nullifying these', row)
         switch(row) {
           case 'topLeft':
             this.topHorizontal = null;
@@ -203,8 +211,8 @@ var board = new Vue({
         }
 
       } else {
-        console.log('computer row col', row, col)
-        var slot = slotNames[row][col]; console.log('cpu Tic slot', slot, row, col)
+
+        var slot = slotNames[row][col];
         $('#' + slot + ' > .' + this.computer).css({'visibility': 'visible', 'display': 'block'});
         $('#' + slot + ' > .' + this.player).css({'display': 'none'});
         game[row][col] = this.computer;
@@ -329,8 +337,8 @@ var board = new Vue({
       var i, j;
       for (i = 0; i < slotNames.length; i++) {
         for (j = 0; j < slotNames[i].length; j++) {
-          $('#' + slotNames[i][j] + ' > .x').css('visibility', 'hidden');
-          $('#' + slotNames[i][j] + ' > .o').css('visibility', 'hidden');
+          $('#' + slotNames[i][j]).css('background-color', 'transparent');
+          transform(slotNames[i][j]);
         }
       }
       for (i = 0; i < 3; i++) {
@@ -371,6 +379,21 @@ var board = new Vue({
 
 });
 
+function transform(position) {
+  var degree = 0;
+  var positionInterval = setInterval(function() {
+    degree++;
+    $('#' + position).css('transform', 'skew(' + degree + 'deg, ' + degree + 'deg)');
+    if (degree === 45) {
+      $('#' + position + ' > .x').css('visibility', 'hidden');
+      $('#' + position + ' > .o').css('visibility', 'hidden');
+    }
+    if (degree === 180) {
+      clearInterval(positionInterval);
+    }
+  }, 10);
+}
+
 var winner = new Vue({
   el: '#winner',
   data: {
@@ -389,7 +412,6 @@ var winner = new Vue({
   },
   methods: {
     show: function(winner) {
-      console.log('winner.show()', winner)
       this.decided = true;
       if (winner === 'player') {
         $('#winner').html(this.player);
