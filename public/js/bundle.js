@@ -361,7 +361,6 @@ var board = new Vue({
     },
     tic: function(location) {
       if (winner.decided) return;
-
       switch(location) {
         case 'topLeft':
           if (game[0][0] !== undefined) return;
@@ -459,7 +458,7 @@ var board = new Vue({
         default:
           console.log('something isn\'t right...');
       }
-      this.playCount++; console.log("tic'd location:", location)
+      this.playCount++;
 
       $('#' + location + ' > .' + board.player).css({'visibility': 'visible', 'display': 'block'});
       $('#' + location + ' > .' + board.computer).css({'display': 'none'});
@@ -468,7 +467,6 @@ var board = new Vue({
     },
     computerTic: function(row, col) {
       if (arguments.length === 1) {
-        console.log('1 arg start cputic ', row)
         // 'row' is the slot name
         loop1 :
         for (var i = 0; i < slotNames.length; i++) {
@@ -485,46 +483,52 @@ var board = new Vue({
         this[row] = 'computer';
         this.playCount++;
         if (checkWinner(row, board, winner)) return;
-        console.log('im nullifying these', row)
         switch(row) {
           case 'topLeft':
             this.topHorizontal = null;
             this.verticalZero = null;
             this.diagonalDown = null;
+            break;
           case 'topCenter':
             this.topHorizontal = null;
             this.verticalOne = null;
+            break;
           case 'topRight':
             this.topHorizontal = null;
             this.verticalTwo = null;
             this.diagonalUp = null;
+            break;
           case 'midLeft':
             this.midHorizontal = null;
             this.verticalZero = null;
+            break;
           case 'midCenter':
             this.midHorizontal = null;
             this.verticalOne = null;
             this.diagonalDown = null;
             this.diagonalUp = null;
+            break;
           case 'midRight':
             this.midHorizontal = null;
             this.verticalTwo = null;
+            break;
           case 'botLeft':
             this.botHorizontal = null;
             this.verticalZero = null;
             this.diagonalUp = null;
+            break;
           case 'botCenter':
             this.botHorizontal = null;
             this.verticalOne = null;
+            break;
           case 'botRight':
             this.botHorizontal = null;
             this.verticalTwo = null;
             this.diagonalDown = null;
         }
-
       } else {
-        console.log('computer row col', row, col)
-        var slot = slotNames[row][col]; console.log('cpu Tic slot', slot, row, col)
+
+        var slot = slotNames[row][col];
         $('#' + slot + ' > .' + this.computer).css({'visibility': 'visible', 'display': 'block'});
         $('#' + slot + ' > .' + this.player).css({'display': 'none'});
         game[row][col] = this.computer;
@@ -537,26 +541,22 @@ var board = new Vue({
             this.topHorizontal = null;
             this.verticalZero = null;
             this.diagonalDown = null;
-            done = true;
             break;
           }
           if (row === 0 && col === 1) {
             this.topHorizontal = null;
             this.verticalOne = null;
-            done = true;
             break;
           }
           if (row === 0 && col === 2) {
             this.topHorizontal = null;
             this.verticalTwo = null;
             this.diagonalUp = null;
-            done = true;
             break;
           }
           if (row === 1 && col === 0) {
             this.midHorizontal = null;
             this.verticalZero = null;
-            done = true;
             break;
           }
           if (row === 1 && col === 1) {
@@ -564,33 +564,28 @@ var board = new Vue({
             this.verticalOne = null;
             this.diagonalUp = null;
             this.diagonalDown = null;
-            done = true;
             break;
           }
           if (row === 1 && col === 2) {
             this.midHorizontal = null;
             this.verticalTwo = null;
-            done = true;
             break;
           }
           if (row === 2 && col === 0) {
             this.botHorizontal = null;
             this.verticalZero = null;
             this.diagonalUp = null;
-            done = true;
             break;
           }
           if (row === 2 && col === 1) {
             this.botHorizontal = null;
             this.verticalOne = null;
-            done = true;
             break;
           }
           if (row === 2 && col === 2) {
             this.botHorizontal = null;
             this.verticalTwo = null;
             this.diagonalDown = null;
-            done = true;
             break;
           }
           done = true;
@@ -634,17 +629,19 @@ var board = new Vue({
           if (winner.cdu !== null) winner.cdu++;
           break;
         case 'botCenter':
-          if (this.cbh !== null) this.cbh++;
-          if (this.cvo !== null) this.cvo++;
+          if (winner.cbh !== null) winner.cbh++;
+          if (winner.cvo !== null) winner.cvo++;
           break;
         case 'botRight':
-          if (this.cbh !== null) this.cbh++;
-          if (this.cvt !== null) this.cvt++;
-          if (this.cdd !== null) this.cdd++;
+          if (winner.cbh !== null) winner.cbh++;
+          if (winner.cvt !== null) winner.cvt++;
+          if (winner.cdd !== null) winner.cdd++;
           break;
       }
     },
     reset: function() {
+      if (winner.resetting === true) return;
+      winner.resetting = true;
       $('#winner').html('');
       var i, j;
       for (i = 0; i < slotNames.length; i++) {
@@ -702,6 +699,7 @@ function transform(position) {
     }
     if (degree === 180) {
       clearInterval(positionInterval);
+      winner.resetting = false;
     }
   }, 10);
 }
@@ -713,6 +711,7 @@ var winner = new Vue({
     computer: 'Computer wins!',
     draw: 'It\'s a draw!',
     decided: false,
+    resetting: false,
     cth: 0,
     cmh: 0,
     cbh: 0,
@@ -724,7 +723,6 @@ var winner = new Vue({
   },
   methods: {
     show: function(winner) {
-      console.log('winner.show()', winner)
       this.decided = true;
       if (winner === 'player') {
         $('#winner').html(this.player);
@@ -739,11 +737,10 @@ var winner = new Vue({
 
 },{"./checkWinner":1,"./tac":3}],3:[function(require,module,exports){
 function tac(board, winner, game) {
-  console.log('board playcount', board.playCount)
   var plot;
   for (var row in board) {
     if (board[row] === 2 && row !== 'playCount') {
-      plot = row; console.log('plot ', plot)
+      plot = row;
       break;
     }
   }
@@ -993,7 +990,6 @@ function tac(board, winner, game) {
     }
   }
 
-console.log('THERE\'S A PLOT! HERE IT IS! ', plot)
   var i = 0;
   switch(plot) {
     case 'topHorizontal':
