@@ -402,6 +402,7 @@ var winner = new Vue({
     draw: 'It\'s a draw!',
     decided: false,
     resetting: false,
+    firstTac: undefined,
     cth: 0,
     cmh: 0,
     cbh: 0,

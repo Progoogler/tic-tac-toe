@@ -712,6 +712,7 @@ var winner = new Vue({
     draw: 'It\'s a draw!',
     decided: false,
     resetting: false,
+    firstTac: undefined,
     cth: 0,
     cmh: 0,
     cbh: 0,
@@ -751,10 +752,19 @@ function tac(board, winner, game) {
     } else {
       var row = Math.floor(Math.random() * 3);
       var col = Math.floor(Math.random() * 3);
-      if (col === 1) {
-        col++;
+      if (col === 1 && row === 1) row++;
+      if (winner.firstTac === row + ' ' + col) {
+        row = Math.floor(Math.random() * 3);
+        col = Math.floor(Math.random() * 3);
+        if (col === 1 && row === 1) row-- && col++;
+        if (winner.firstTac === row + ' ' + col) {
+          row = Math.floor(Math.random() * 3);
+          col = Math.floor(Math.random() * 3);
+          if (col === 1 && row === 1) row++ && col--;
+        }
       }
       board.computerTic(row, col);
+      winner.firstTac = row + ' ' + col;
       return;
     }
   } else {
